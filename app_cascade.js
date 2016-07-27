@@ -27,6 +27,7 @@ app.use(function *(next){
 // response
 app.use(function*(){
 	this.body = 'Hello World';
+	console.log(this.cookies);
 })
 
 // listen
