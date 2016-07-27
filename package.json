@@ -1,0 +1,23 @@
+{
+  "name": "koa-react-cnode",
+  "version": "1.0.0",
+  "description": "koa and react learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xubaoshi/koa-react-cnode.git"
+  },
+  "keywords": [
+    "koa",
+    "react"
+  ],
+  "author": "xubaoshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xubaoshi/koa-react-cnode/issues"
+  },
+  "homepage": "https://github.com/xubaoshi/koa-react-cnode#readme"
+}
