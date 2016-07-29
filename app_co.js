@@ -10,7 +10,7 @@ var config = require('./config/config')
 var app = koa();
 
 app.use(function *(){
-	var file = yield fs.readFile('./package.json', 'utf-8');
+	var file = fs.readFile('./package.json', 'utf-8');
 	this.type = 'markdown';
 	this.body = file;
 })
