@@ -23,7 +23,9 @@
   "dependencies": {
     "co-fs": "^1.2.0",
     "koa": "^1.2.1",
-    "lodash": "^4.14.0"
+    "koa-react-view": "^3.0.0",
+    "lodash": "^4.14.0",
+    "react-engine": "^4.0.0"
   },
   "devDependencies": {
     "open": "0.0.5"
