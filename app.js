@@ -3,7 +3,10 @@
  */
 var koa = require('koa');
 var react = require('koa-react-view');
+var register = require('babel-register');
 var path = require('path');
+var staticCache = require('koa-static-cache');
+var open = require('open');
 
 var app = koa();
 
@@ -11,13 +14,31 @@ var viewpath = path.join(__dirname,'views');
 var assetspath = path.join(__dirname,'public');
 
 app.use(function *(){
-	this.body = 'Hello World';
+	this.render('index',{
+		title:'List',
+		list:[
+			'hello koa',
+			'heelo react'
+		]
+	})
 });
 
 react(app,{
-	views:viewpath;
+	views:viewpath
 })
 
-app.listen(3000);
+// babel
+register({
+	presets:['es2015','react'],
+	extensions:['.jsx']
+})
 
-console.log("Server started, listening on port: 3000");
+// static cache
+// 在响应中添加对静态文件缓存的header
+app.use(staticCache(assetspath));
+
+app.listen(3000, 'localhost', err =>{
+	if(err) return;
+	console.log('Server started, listening on port:' + 3000)
+	open('http://localhost:3000')
+});
