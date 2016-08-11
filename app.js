@@ -13,16 +13,6 @@ var app = koa();
 var viewpath = path.join(__dirname,'views');
 var assetspath = path.join(__dirname,'public');
 
-app.use(function *(){
-	this.render('index',{
-		title:'List',
-		list:[
-			'hello koa',
-			'heelo react'
-		]
-	})
-});
-
 react(app,{
 	views:viewpath
 })
@@ -36,6 +26,16 @@ register({
 // static cache
 // 在响应中添加对静态文件缓存的header
 app.use(staticCache(assetspath));
+
+app.use(function* (){
+	this.render('index',{
+		title:'List',
+		list:[
+			'hello koa',
+			'heelo react'
+		]
+	});
+});
 
 app.listen(3000, 'localhost', err =>{
 	if(err) return;

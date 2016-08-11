@@ -31,3 +31,4 @@ var Content = React.createClass({
 	}
 });
 
+module.exports = Content;
