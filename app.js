@@ -33,7 +33,6 @@ app.use(staticCache(assetspath));
 
 // koa-router
 routes(router, app);
-
 app.use(router.routes());
 
 app.listen(3000, 'localhost', err =>{
