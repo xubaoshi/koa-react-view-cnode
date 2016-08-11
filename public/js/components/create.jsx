@@ -14,14 +14,16 @@ var Create = React.createClass({
 	render : function(){
 		return (
 			<div className="create-box">
-				<input type="text" placeholder="press enter to save" onKeyDown={this._onKeyDown} onChange={this._onChange} value={this.state.value}/>
+				<input type="text" placeholder="press enter to save" onKeyDown={this._onKeyDown} onChange={this._onChange} value={this.state.value || ''}/>
 			</div>
 		)
 	},
 	_onKeyDown : function(event){
-		if(event.keyCode === ENTER_KEY_CODE) this.save();
+		if(event.keyCode == ENTER_KEY_CODE) {
+			this.save();
+		}
 	},
-	_onChange : function(){
+	_onChange : function(event){
 		this.state.value = event.target.value;
 		this.setState({
 			value : event.target.value

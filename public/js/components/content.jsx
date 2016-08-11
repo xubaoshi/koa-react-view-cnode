@@ -11,24 +11,33 @@ var Content = React.createClass({
 			list : this.props.list
 		};
 	},
-	add : function(content){
+	add: function (content) {
+		this.setState({
+			list: this.state.list.concat(content)
+		});
 	},
-	remove : function(index){
 
+	remove: function (index) {
+		console.log(index, this.state.list)
+		this.state.list.splice(index, 1);
+		this.setState({
+			list: this.state.list
+		});
 	},
 	render : function(){
 		return (
 			<div>
 				<ul>
 					{
-						this.state.list.map((content,index) => {
-							return <Item content={content} key={index} remove={this.remove.bind(this,index)} />;
+						this.state.list.map((content, index) =>{
+							return <Item content={content} key={index} remove={this.remove.bind(this,index)}/>;
 						})
 					}
 				</ul>
+				<Create add={this.add}/>
 			</div>
 		)
 	}
-});
+	});
 
 module.exports = Content;
