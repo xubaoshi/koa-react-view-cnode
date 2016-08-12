@@ -3,6 +3,7 @@
  */
 var koa = require('koa');
 var router = require('koa-router')();
+var bodyParser = require('koa-bodyparser');
 var react = require('koa-react-view');
 var register = require('babel-register');
 var path = require('path');
@@ -30,6 +31,8 @@ register({
 // 在响应中添加对静态文件缓存的header
 app.use(staticCache(assetspath));
 
+// body parser
+app.use(bodyParser());
 
 // koa-router
 routes(router, app);

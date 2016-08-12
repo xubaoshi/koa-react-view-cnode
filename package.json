@@ -29,6 +29,7 @@
     "escape-html": "^1.0.3",
     "jsx-loader": "^0.13.2",
     "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
     "koa-proxy": "^0.6.0",
     "koa-react-view": "^3.0.0",
     "koa-request": "^1.0.0",
