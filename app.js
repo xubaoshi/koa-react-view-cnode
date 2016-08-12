@@ -9,7 +9,7 @@ var path = require('path');
 var staticCache = require('koa-static-cache');
 var open = require('open');
 
-var routes = require('./routes')
+var routes = require('./server/routes')
 
 var app = koa();
 
