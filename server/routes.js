@@ -10,7 +10,7 @@ module.exports = function(router, app){
 		var options = {
 			url : api.list,
 			headers : {'User-Agent' : 'request'}
-		}
+		};
 		console.log(this.request.body);
 		var response = yield request(options);
 		var info = JSON.parse(response.body);
