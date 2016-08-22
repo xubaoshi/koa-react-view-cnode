@@ -9,9 +9,11 @@ var ReactDOM = require('react-dom');
 function initApp(){
 	var container = document.getElementById('content');
 	var list = unescapeHtml(window._list_);
-	list = JSON.parse(list);
+	if(list){
+		list = JSON.parse(list);
+	}
 	ReactDOM.render(
-		<Content list={list} />,
+		<Content list={list}/>,
 		container
 	)
 };

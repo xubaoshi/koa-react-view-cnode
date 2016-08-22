@@ -7,11 +7,12 @@ var api = require('../config/api.js');
 
 module.exports = function(router, app){
 	router.get('/', function*(){
+		var url = this.originalUrl != '/' ? this.originalUrl.substr(2, this.originalUrl.length) : 'tab=all';
 		var options = {
-			url : api.list,
+			url : api.list + url,
 			headers : {'User-Agent' : 'request'}
 		};
-		console.log(this.request.body);
+		console.log(this.params);
 		var response = yield request(options);
 		var info = JSON.parse(response.body);
 		this.render('index', {
