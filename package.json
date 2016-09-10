@@ -38,6 +38,7 @@
     "lodash": "^4.14.0",
     "react": "^15.3.0",
     "react-engine": "^4.0.0",
+    "react-router": "^2.8.0",
     "unescape-html": "^1.0.0",
     "webpack": "^1.13.1"
   },

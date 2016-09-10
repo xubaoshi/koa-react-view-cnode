@@ -38,7 +38,7 @@ app.use(bodyParser());
 routes(router, app);
 app.use(router.routes());
 
-app.listen(3000, 'localhost', err =>{
+app.listen(3000, '', err =>{
 	if(err) return;
 	console.log('Server started, listening on port:' + 3000)
 	open('http://localhost:3000/')

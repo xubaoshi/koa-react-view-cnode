@@ -26,15 +26,12 @@ var Content = React.createClass({
 	},
 	render : function(){
 		return (
-			<div>
-				<ul>
-					{
-						this.state.list.map((content, index) =>{
-							return <Item content={content} key={index} remove={this.remove.bind(this,index)}/>;
-						})
-					}
-				</ul>
-				<Create add={this.add}/>
+			<div className="list-group">
+				{
+					this.state.list.map((content, index) =>{
+						return <Item content={content} key={index} remove={this.remove.bind(this,index)}/>;
+					})
+				}
 			</div>
 		)
 	}
